@@ -7,10 +7,11 @@ Java version of twofish from cryptix, converted it to C++ (don't ask why),
 and enhanced it by adding CBC mode and the ciphertext stealing technique 
 from Applied Cryptography (pg. 196) 
 
-How do you use it?
+How do you use it? These examples send "hobbit.txt" from Machine A to Machine B. 
+Machine A is setup to listen on port 1234 and then waits for Machine B to connect.
 
   Machine A: nc.exe -k SecretKeyUnderBobs -l -p 1234 < hobbit.txt
-  Machine B: nc.exe -k SecretKeyUnderBobs <machine A IP> 1234
+  Machine B: nc.exe -k SecretKeyUnderBobs <Machine_A_IP> 1234
     or 
   Machine B: nc.exe -k SecretKeyUnderBobs 127.0.0.1 1234
 
